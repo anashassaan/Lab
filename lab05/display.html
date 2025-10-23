@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Library Books Display</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 20px;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #2a7ae2;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #1a5acb;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #eee;
+        }
+        #output {
+            margin-top: 20px;
+        }
+         
+        .result-item {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            background: #fff;
+            padding: 10px;
+            border-radius: 6px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+        .result-item img {
+            width: 160px;
+            height: auto;
+            border: 1px solid #ddd;
+        }
+        .result-item h3 {
+            margin: 0 0 6px 0;
+        }
+        .result-item p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Library Books Management System</h1>
+    <!-- Search UI -->
+    <div style="text-align:center; margin-bottom:10px;">
+        <input type="text" id="searchInput" placeholder="Enter book title to search" style="padding:8px; width:300px;">
+        <button onclick="searchBooks()">Search Books</button>
+        <button onclick="loadXML()">Show Books</button>
+        <button onclick="hideContent()">Hide Books</button>
+    </div>
+    <div id="output"></div>
+
+    <script>
+        // Global storage for loaded books
+        let booksData = [];
+
+        function loadXML() {
+            let xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState === 4 && this.status === 200) {
+                    displayBooks(this);
+                }
+            };
+            xhttp.open("GET", "library.xml", true);
+            xhttp.send();
+        }
+
+        function displayBooks(xml) {
+            let xmlDoc = xml.responseXML;
+            let books = xmlDoc.getElementsByTagName("book");
+
+            // Populate global booksData
+            booksData = [];
+
+            let output = "<table border='1' cellpadding='8'><tr><th>Title</th><th>Author</th><th>Year</th><th>Price ($)</th></tr>";
+
+            for (let i = 0; i < books.length; i++) {
+                let title = books[i].getElementsByTagName("title")[0].childNodes[0].nodeValue;
+                let author = books[i].getElementsByTagName("author")[0].childNodes[0].nodeValue;
+                let year = books[i].getElementsByTagName("year")[0].childNodes[0].nodeValue;
+                let price = books[i].getElementsByTagName("price")[0].childNodes[0].nodeValue;
+
+                booksData.push({ title, author, year, price });
+
+                output += `<tr><td>${title}</td><td>${author}</td><td>${year}</td><td>${price}</td></tr>`;
+            }
+            output += "</table>";
+            document.getElementById("output").innerHTML = output;
+        }
+
+        function hideContent() {
+            document.getElementById("output").innerHTML = "";
+        }
+
+        // Search function: case-insensitive title match
+        function searchBooks() {
+            const query = document.getElementById('searchInput').value.trim().toLowerCase();
+            if (!query) {
+                alert('Please enter a title to search for.');
+                return;
+            }
+
+            // If booksData empty, try loading XML first
+            if (booksData.length === 0) {
+                // load and then search after loaded
+                let xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function() {
+                    if (this.readyState === 4 && this.status === 200) {
+                        displayBooks(this);
+                        performSearch(query);
+                    }
+                };
+                xhttp.open("GET", "library.xml", true);
+                xhttp.send();
+            } else {
+                performSearch(query);
+            }
+        }
+
+        function performSearch(query) {
+            const results = booksData.filter(b => b.title.toLowerCase().includes(query));
+            if (results.length === 0) {
+                document.getElementById('output').innerHTML = `<p>No books found matching "${query}".</p>`;
+                return;
+            }
+
+            // Display results with a screenshot placeholder
+            let html = "<div style='display:flex; flex-direction:column; gap:12px;'>";
+            results.forEach(r => {
+                html += `
+                    <div class='result-item'>
+                        <img src='placeholder.png' alt='screenshot'>
+                        <div>
+                            <h3>${r.title}</h3>
+                            <p>Author: ${r.author}</p>
+                            <p>Year: ${r.year}</p>
+                            <p>Price: $${r.price}</p>
+                        </div>
+                    </div>`;
+            });
+            html += "</div>";
+            document.getElementById('output').innerHTML = html;
+        }
+    </script>
+</body>
+</html>

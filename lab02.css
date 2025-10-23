@@ -1,0 +1,113 @@
+/* ===============================
+   a. Global Styles
+================================= */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+/* ===============================
+   b. Header & Navigation
+================================= */
+header {
+  background-color: #4CAF50;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+nav {
+  background-color: #333;
+  padding: 10px;
+  text-align: center;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+}
+
+nav a:hover {
+  color: yellow;
+}
+
+/* ===============================
+   c. Box Model
+================================= */
+main {
+  border: 2px solid #ccc;
+  padding: 20px;
+  margin: 20px;
+  background-color: white;
+  border-radius: 8px;
+}
+
+/* ===============================
+   d. Layouts (Desktop: min-width 768px)
+================================= */
+@media (min-width: 768px) {
+  nav {
+    float: left;
+    width: 20%;
+    height: 100vh;
+    box-sizing: border-box;
+  }
+
+  main {
+    float: left;
+    width: 75%;
+    margin-left: 5%;
+    box-sizing: border-box;
+  }
+}
+
+/* ===============================
+   e. Typography
+================================= */
+h1, h2, h3 {
+  color: #4CAF50;
+}
+
+p {
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+/* ===============================
+   f. Responsive Design (Mobile: max-width 600px)
+================================= */
+@media (max-width: 600px) {
+  nav, main {
+    float: none;
+    width: 100%;
+    margin: 0;
+    padding: 10px;
+  }
+
+  video, canvas, audio {
+    width: 100%;
+    height: auto;
+  }
+}
+
+/* ===============================
+   g. Buttons (Animations & Transitions)
+================================= */
+input[type="submit"] {
+  background: #4CAF50;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+input[type="submit"]:hover {
+  background: #45a049;
+  transform: scale(1.05);
+}

@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anas Hassaan | Portfolio</title>
+
+  <!-- Bootstrap & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- AOS Animations -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary-bg: #0b1220;
+      --secondary-bg: #111a2d;
+      --accent: #3b82f6;
+      --text-color: #e5e7eb;
+    }
+
+    body {
+      background-color: var(--primary-bg);
+      color: var(--text-color);
+      font-family: "Inter", sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    .navbar {
+      background-color: var(--secondary-bg);
+    }
+
+    .navbar-brand, .nav-link, .dropdown-item {
+      color: var(--text-color) !important;
+    }
+
+    .dropdown-item:hover {
+      background-color: var(--accent);
+      color: #fff !important;
+    }
+
+    .nav-link:hover {
+      color: var(--accent) !important;
+    }
+
+    .hero {
+      padding: 120px 0;
+      background-color: var(--primary-bg);
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+    }
+
+    .btn-primary {
+      background-color: var(--accent);
+      border: none;
+    }
+
+    .btn-outline-light {
+      border-color: var(--text-color);
+      color: var(--text-color);
+    }
+
+    .btn-outline-light:hover {
+      background-color: var(--accent);
+      color: #fff;
+    }
+
+    section {
+      padding: 80px 0;
+    }
+
+    .card {
+      background-color: var(--secondary-bg);
+      border: none;
+      color: var(--text-color);
+      transition: all 0.3s ease;
+      height: 100%;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    }
+
+    footer {
+      background-color: var(--secondary-bg);
+      text-align: center;
+      padding: 30px 0;
+      color: var(--text-color);
+    }
+
+    .contact-info i {
+      color: var(--accent);
+    }
+
+    .social-icons a {
+      color: var(--text-color);
+      margin-right: 15px;
+      font-size: 1.4rem;
+    }
+
+    .social-icons a:hover {
+      color: var(--accent);
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg fixed-top shadow-sm">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#">anas</a>
+      <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon bg-light"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+
+          <!-- Dropdown Menu -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#portfolio" id="navbarDropdown" role="button" data-bs-toggle="dropdown">Projects</a>
+            <ul class="dropdown-menu bg-dark">
+              <li><a class="dropdown-item" href="#mobile-projects">Mobile Apps</a></li>
+              <li><a class="dropdown-item" href="#ai-projects">AI & ML</a></li>
+              <li><a class="dropdown-item" href="#hardware-projects">Hardware</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section id="home" class="hero">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6" data-aos="fade-right">
+          <h1 class="mb-3">Anas Hassaan</h1>
+          <h4 class="text-primary mb-4">Flutter Developer & ML Enthusiast</h4>
+          <p>Building intelligent, responsive, and scalable solutions for the future — from full-stack apps to machine learning systems.</p>
+          <div class="mt-4">
+            <a href="#contact" class="btn btn-primary me-3">Hire Me</a>
+            <a href="#" class="btn btn-outline-light">Download CV</a>
+          </div>
+        </div>
+        <div class="col-md-6 text-center" data-aos="fade-left">
+          <img src="lab06/anas.jpg" class="img-fluid rounded shadow" alt="Anas Hassaan" style="opacity:1;">
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="bg-dark">
+    <div class="container text-center">
+      <h2 class="fw-bold mb-4" data-aos="fade-up">My Services</h2>
+      <div class="row g-4">
+        <div class="col-md-4" data-aos="zoom-in">
+          <div class="card p-4">
+            <i class="bi bi-phone fs-1 mb-3 text-primary"></i>
+            <h5>Flutter Development</h5>
+            <p>Cross-platform mobile and web apps with sleek UI and fast performance.</p>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
+          <div class="card p-4">
+            <i class="bi bi-database fs-1 mb-3 text-primary"></i>
+            <h5>Backend & API Design</h5>
+            <p>Secure and scalable APIs using FastAPI, Django, and Node.js.</p>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
+          <div class="card p-4">
+            <i class="bi bi-cpu fs-1 mb-3 text-primary"></i>
+            <h5>AI & Machine Learning</h5>
+            <p>Custom ML solutions for prediction, classification, and NLP applications.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="portfolio">
+    <div class="container">
+      <h2 class="text-center fw-bold mb-5" data-aos="fade-up">Projects</h2>
+
+      <!-- Mobile Apps -->
+      <div id="mobile-projects" class="mb-5">
+        <h4 class="text-primary mb-4">Mobile Apps</h4>
+        <div class="row g-4">
+          <div class="col-md-4" data-aos="flip-left">
+            <div class="card p-3">
+              <img src="https://cdn.dribbble.com/users/52761/screenshots/15687962/media/048bffccfa13f9129c8b2f4b4f54d6d3.png" class="card-img-top rounded mb-3" alt="">
+              <h5>File Converter App</h5>
+              <p>Convert Word files to PDFs with one tap using Flutter and FastAPI.</p>
+              <span class="badge bg-primary">Flutter</span>
+              <span class="badge bg-info">FastAPI</span>
+            </div>
+          </div>
+          <div class="col-md-4" data-aos="flip-left" data-aos-delay="100">
+            <div class="card p-3">
+              <img src="https://cdn.dribbble.com/userupload/4746753/file/original-05b01a.png" class="card-img-top rounded mb-3" alt="">
+              <h5>Snapchat Clone</h5>
+              <p>Real-time chat & story features built with Flutter & Firebase.</p>
+              <span class="badge bg-warning">Firebase</span>
+              <span class="badge bg-primary">Flutter</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- AI Projects -->
+      <div id="ai-projects" class="mb-5">
+        <h4 class="text-primary mb-4">AI & Machine Learning</h4>
+        <div class="row g-4">
+          <div class="col-md-4" data-aos="flip-left">
+            <div class="card p-3">
+              <img src="https://cdn.dribbble.com/users/3460/screenshots/17759220/media/32cc011c7d69b81f19edab5a5b5a63a7.png" class="card-img-top rounded mb-3" alt="">
+              <h5>AI Image Recognition</h5>
+              <p>Trained CNN models to classify and detect objects in images.</p>
+              <span class="badge bg-success">TensorFlow</span>
+              <span class="badge bg-dark">OpenCV</span>
+            </div>
+          </div>
+          <div class="col-md-4" data-aos="flip-left" data-aos-delay="100">
+            <div class="card p-3">
+              <img src="https://cdn.dribbble.com/users/220465/screenshots/17359176/media/46890584a48d248ff68b63e53772e9cd.png" class="card-img-top rounded mb-3" alt="">
+              <h5>Chatbot for Businesses</h5>
+              <p>Smart conversational AI chatbot for customer engagement using NLP.</p>
+              <span class="badge bg-primary">Python</span>
+              <span class="badge bg-danger">NLP</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hardware Projects -->
+      <div id="hardware-projects">
+        <h4 class="text-primary mb-4">Hardware Projects</h4>
+        <div class="row g-4">
+          <div class="col-md-4" data-aos="flip-left">
+            <div class="card p-3">
+              <img src="https://cdn.dribbble.com/users/253226/screenshots/17493881/media/f49f80281a6f509c6b7b9e96181f86b7.png" class="card-img-top rounded mb-3" alt="">
+              <h5>Emergency Traffic Light System</h5>
+              <p>Smart IoT-based system prioritizing emergency vehicles using sensors.</p>
+              <span class="badge bg-success">Arduino</span>
+              <span class="badge bg-info">IoT</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="bg-dark">
+    <div class="container">
+      <h2 class="text-center fw-bold mb-5" data-aos="fade-up">Get in Touch</h2>
+      <div class="row g-5">
+        <div class="col-md-6" data-aos="fade-right">
+          <form>
+            <div class="mb-3">
+              <input type="text" class="form-control bg-transparent text-light border-secondary" placeholder="Your Name">
+            </div>
+            <div class="mb-3">
+              <input type="email" class="form-control bg-transparent text-light border-secondary" placeholder="Your Email">
+            </div>
+            <div class="mb-3">
+              <textarea class="form-control bg-transparent text-light border-secondary" rows="4" placeholder="Your Message"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Send Message</button>
+          </form>
+        </div>
+
+        <div class="col-md-6 contact-info" data-aos="fade-left">
+          <h5>Contact Info</h5>
+          <p><i class="bi bi-telephone-fill"></i> +92 364 944 4233</p>
+          <p><i class="bi bi-envelope-fill"></i> manashassan6070@gmail.com</p>
+          <p><i class="bi bi-geo-alt-fill"></i> Lahore, Pakistan</p>
+          <h6 class="mt-4">Follow Me</h6>
+          <div class="social-icons">
+            <a href="https://github.com/anashassaan"><i class="bi bi-github"></i></a>
+            <a href="https://www.linkedin.com/in/m-anas-hassaan-490960258"><i class="bi bi-linkedin"></i></a>
+            <a href="https://m-anas-hassaan.vercel.app"><i class="bi bi-globe2"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Anas Hassaan. All rights reserved.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 1000, once: true });
+  </script>
+</body>
+</html>
