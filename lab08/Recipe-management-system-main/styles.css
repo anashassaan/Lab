@@ -1,0 +1,84 @@
+/* Classical theme stylesheet — enhanced dark accents and visuals */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+	margin:0;
+	font-family: "Georgia", "Times New Roman", Times, serif;
+	/* slightly darker parchment background */
+	background: linear-gradient(180deg,#efe6db 0%, #e7dccf 100%);
+	color:#111214;
+	-webkit-font-smoothing:antialiased;
+	-moz-osx-font-smoothing:grayscale;
+	line-height:1.6;
+}
+
+.container{max-width:1100px;margin:40px auto;padding:28px}
+
+/* Headings */
+h1,h2,h3{font-family: "Playfair Display", "Georgia", serif; margin:0 0 10px}
+h1{font-size:40px;letter-spacing:0.6px;color:#22262a;text-align:center;padding:18px 0 14px}
+h2{font-size:24px;color:#2f3336}
+
+.lead{color:#6b5a46;font-size:15px;margin-bottom:18px;text-align:center}
+
+/* Cards with stronger paper feel */
+.card{
+	background:linear-gradient(180deg,#fffaf2 0%, #fff6ee 100%);
+	border:1px solid rgba(34,28,22,0.08);
+	border-radius:10px;
+	padding:20px;
+	box-shadow:0 10px 30px rgba(25,20,15,0.12);
+	transition:transform .18s ease,box-shadow .18s ease;
+}
+.card:hover{transform:translateY(-6px);box-shadow:0 22px 48px rgba(25,20,15,0.16)}
+
+/* Labels & form elements */
+label{display:block;font-weight:700;margin:10px 0 6px;font-size:14px;color:#2f2a24}
+input[type=text], textarea, select{
+	width:100%;padding:12px;border-radius:8px;border:1px solid rgba(40,35,30,0.08);
+	background:rgba(255,255,255,0.96);font-family:inherit;font-size:15px;color:#222;
+	box-shadow:inset 0 1px 0 rgba(255,255,255,0.6);
+	transition:box-shadow .12s ease,transform .12s ease;
+}
+input[type=text]:focus, textarea:focus{outline:none;box-shadow:0 4px 18px rgba(40,30,20,0.06);transform:translateY(-1px)}
+textarea{min-height:120px;resize:vertical}
+
+/* Buttons — darker, richer colors */
+.btn{padding:10px 16px;border-radius:8px;cursor:pointer;font-weight:700;border:1px solid rgba(34,28,22,0.12);background-clip:padding-box;transition:transform .12s ease,box-shadow .12s ease}
+.btn:active{transform:translateY(1px)}
+.btn-primary{background:linear-gradient(180deg,#254a37 0%, #1f3d2e 100%);color:#fff;box-shadow:0 6px 18px rgba(31,45,38,0.18)}
+.btn-primary:hover{filter:brightness(1.06)}
+.btn-ghost{background:#f4eada;border:1px solid rgba(60,50,40,0.12);color:#3b392f}
+.btn-danger{background:linear-gradient(180deg,#953535 0%, #7b2b2b 100%);color:#fff}
+.btn-edit{background:linear-gradient(180deg,#d7b34a 0%, #c99f37 100%);color:#2b1f12}
+
+/* Recipe grid */
+.recipe-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px;margin-top:22px}
+.recipe-card{overflow:hidden;border-radius:10px}
+.recipe-thumb{height:160px;background:#e6dfd2;background-size:cover;background-position:center;border-bottom:1px solid rgba(34,28,20,0.04);}
+.recipe-body{padding:16px;background:transparent}
+.recipe-title{font-size:18px;margin:0 0 6px;color:#1b1b1b;font-weight:700}
+.recipe-meta{font-size:13px;color:#6b5e4a}
+
+.actions{display:flex;gap:10px;margin-top:12px}
+
+/* Card hover lift */
+.recipe-card{background:linear-gradient(180deg,#fffdf6 0%,#fff8f0 100%);border:1px solid rgba(34,28,20,0.06);box-shadow:0 8px 24px rgba(25,20,15,0.06);transition:transform .16s ease,box-shadow .16s ease}
+.recipe-card:hover{transform:translateY(-8px);box-shadow:0 24px 60px rgba(20,18,15,0.14)}
+
+/* Modal */
+.modal-backdrop{position:fixed;inset:0;background:rgba(22,18,14,0.55);display:flex;align-items:center;justify-content:center;padding:20px}
+.modal{background:linear-gradient(180deg,#fffaf5 0%, #fff6ef 100%);padding:22px;border-radius:12px;width:min(880px,95%);box-shadow:0 40px 120px rgba(10,8,6,0.5)}
+
+/* Utilities */
+.text-muted{color:#7a6b58}
+.small{font-size:13px}
+
+/* Responsive tweaks */
+@media (max-width:700px){
+	.container{padding:16px;margin:18px auto}
+	h1{font-size:30px}
+	.recipe-thumb{height:140px}
+}
+
+/* End of enhanced classical theme */

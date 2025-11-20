@@ -1,0 +1,67 @@
+<h1>Recipe Management</h1>
+<div class="grid">
+
+
+<div class="card">
+<h3>{{ vm.editing ? 'Edit Recipe' : 'Add Recipe' }}</h3>
+
+
+<label>Title</label>
+<input type="text" ng-model="vm.form.title" />
+
+
+<label>Ingredients (comma separated)</label>
+<textarea ng-model="vm.form.ingredients"></textarea>
+
+
+<label>Instructions</label>
+<textarea ng-model="vm.form.instructions"></textarea>
+
+
+<label>Image</label>
+<input type="file" onchange="angular.element(this).scope().vm.handleImage(this.files)">
+
+
+<br><br>
+<button class="btn btn-primary" ng-click="vm.editing ? vm.saveEdit() : vm.addRecipe()">
+{{ vm.editing ? 'Save Changes' : 'Add Recipe' }}
+</button>
+<button class="btn btn-ghost" ng-click="vm.resetForm()">Reset</button>
+</div>
+
+
+
+
+<div class="card">
+<div class="recipe-list">
+<div class="card recipe-card" ng-repeat="r in vm.recipes">
+<div class="recipe-thumb" ng-style="{'background-image':'url('+ (r.image || vm.defaultThumb) +')'}"></div>
+<div class="recipe-body">
+<strong>{{ r.title }}</strong>
+<div class="meta">{{ r.ingredients.join(', ') }}</div>
+
+
+<div class="actions">
+<button class="btn btn-ghost" ng-click="vm.viewRecipe(r)">View</button>
+<button class="btn btn-primary" ng-click="vm.startEdit(r)">Edit</button>
+<button class="btn btn-danger" ng-click="vm.deleteRecipe(r)">Delete</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+</div>
+
+
+<!-- Modal -->
+<div class="modal-backdrop" ng-if="vm.showModal" ng-click="vm.closeModal()">
+<div class="modal" ng-click="$event.stopPropagation()">
+<h2>{{ vm.modalRecipe.title }}</h2>
+<p><strong>Ingredients:</strong> {{ vm.modalRecipe.ingredients.join(', ') }}</p>
+<p><strong>Instructions:</strong></p>
+<p>{{ vm.modalRecipe.instructions }}</p>
+<button class="btn btn-ghost" ng-click="vm.closeModal()">Close</button>
+</div>
+</div>
