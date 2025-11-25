@@ -1,0 +1,65 @@
+/* Shared styles for lab10 pages */
+:root{
+  --bg-start: #f8fafc;
+  --bg-end: #e6eef8;
+  --card-bg: #ffffff;
+  --accent: #1f6feb;
+  --accent-dark: #155ec4;
+  --muted: #6b7280;
+}
+*{box-sizing:border-box}
+html,body{height:100%;}
+body{
+  margin:0;
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background: linear-gradient(180deg,var(--bg-start),var(--bg-end));
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:32px;
+  color:#111827;
+}
+.container{
+  width:100%;
+  max-width:440px;
+}
+.header{
+  text-align:center;
+  margin-bottom:18px;
+}
+.brand{
+  display:inline-block;
+  padding:8px 14px;
+  border-radius:999px;
+  background: linear-gradient(90deg,var(--accent),var(--accent-dark));
+  color: #fff;
+  font-weight:600;
+  box-shadow: 0 6px 18px rgba(31,111,235,0.14);
+}
+.card{
+  background:var(--card-bg);
+  padding:22px;
+  border-radius:12px;
+  box-shadow: 0 6px 20px rgba(15,23,42,0.06);
+}
+h1{font-size:20px;margin:0 0 6px}
+p.lead{margin:0;margin-bottom:12px;color:var(--muted)}
+form.box{display:flex;flex-direction:column;gap:10px}
+label{font-size:13px;color:var(--muted)}
+input[type="text"],input[type="password"],input[type="email"]{
+  padding:10px 12px;border-radius:8px;border:1px solid #e6e9ef;font-size:14px;width:100%;
+}
+.btn{
+  display:inline-block;padding:10px 14px;border-radius:8px;border:none;background:var(--accent);color:#fff;font-weight:600;cursor:pointer;text-align:center;width:100%;
+}
+.btn.secondary{background:#eef2ff;color:var(--accent);border:1px solid rgba(31,111,235,0.08)}
+.btn:hover{background:var(--accent-dark)}
+.small{font-size:13px;color:var(--muted);text-align:center}
+.actions{display:flex;gap:8px;margin-top:6px}
+.link{color:var(--accent);text-decoration:none;font-weight:600}
+.notice{background:#f8fafc;border-left:4px solid var(--accent);padding:10px;border-radius:6px;color:var(--muted);}
+footer{margin-top:14px;text-align:center;color:var(--muted);font-size:13px}
+@media (max-width:480px){
+  body{padding:18px}
+  .container{max-width:100%}
+}
