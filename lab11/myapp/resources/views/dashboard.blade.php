@@ -15,6 +15,10 @@
 
     <div class="py-10">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-8">
+            @php
+                $sessionJson = session('academic_snapshot');
+                $academicSnapshot = $sessionJson ? json_decode($sessionJson, true) : null;
+            @endphp
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div class="bg-white shadow-sm rounded-lg p-6 border border-slate-100">
                     <p class="text-sm text-gray-500">Courses</p>
@@ -30,6 +34,47 @@
                     <p class="text-sm text-gray-500">Students</p>
                     <p class="text-3xl font-semibold text-gray-900 mt-2">{{ $stats['students'] ?? 0 }}</p>
                     <p class="text-sm text-gray-500 mt-1">Enrolled learners</p>
+                </div>
+            </div>
+
+            <div class="bg-white shadow-sm rounded-lg p-6 border border-slate-100">
+                <div class="flex items-center justify-between mb-4">
+                    <div>
+                        <p class="text-sm text-gray-500">Session Insight</p>
+                        <h3 class="text-lg font-semibold text-gray-900">Automatic session data</h3>
+                    </div>
+                    <span class="text-xs uppercase tracking-wide text-gray-500">Real time</span>
+                </div>
+                <dl class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                    <div>
+                        <dt class="text-sm text-gray-500">Login counter</dt>
+                        <dd class="text-2xl font-semibold text-gray-900">{{ session('login_counter', 0) }}</dd>
+                    </div>
+                    <div>
+                        <dt class="text-sm text-gray-500">Last login</dt>
+                        <dd class="text-base font-medium text-gray-900">{{ session('last_login_time', '—') }}</dd>
+                    </div>
+                    <div>
+                        <dt class="text-sm text-gray-500">Username</dt>
+                        <dd class="text-base font-medium text-gray-900">{{ session('username', '—') }}</dd>
+                    </div>
+                    <div>
+                        <dt class="text-sm text-gray-500">Role</dt>
+                        <dd class="text-base font-medium text-gray-900">{{ session('role', '—') }}</dd>
+                    </div>
+                </dl>
+
+                <div class="mt-6">
+                    <p class="text-sm text-gray-500 mb-2">JSON snapshot (course, semester, year)</p>
+                    <pre class="bg-slate-900 text-slate-50 text-sm rounded-md p-4 overflow-x-auto">{{ $sessionJson ?? 'No session JSON recorded yet.' }}</pre>
+
+                    @if($academicSnapshot)
+                        <ul class="mt-3 text-sm text-gray-700 grid grid-cols-1 sm:grid-cols-3 gap-2">
+                            <li><span class="font-semibold text-gray-900">Course:</span> {{ $academicSnapshot['course'] ?? '—' }}</li>
+                            <li><span class="font-semibold text-gray-900">Semester:</span> {{ $academicSnapshot['semester'] ?? '—' }}</li>
+                            <li><span class="font-semibold text-gray-900">Year:</span> {{ $academicSnapshot['year'] ?? '—' }}</li>
+                        </ul>
+                    @endif
                 </div>
             </div>
 
