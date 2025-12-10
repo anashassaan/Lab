@@ -18,6 +18,12 @@
                     <x-nav-link :href="route('courses.index')" :active="request()->routeIs('courses.*')">
                         {{ __('Courses') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('teachers.index')" :active="request()->routeIs('teachers.*')">
+                        {{ __('Teachers') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('students.index')" :active="request()->routeIs('students.*')">
+                        {{ __('Students') }}
+                    </x-nav-link>
                 </div>
             </div>
 
@@ -75,6 +81,12 @@
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('courses.index')" :active="request()->routeIs('courses.*')">
                 {{ __('Courses') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('teachers.index')" :active="request()->routeIs('teachers.*')">
+                {{ __('Teachers') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('students.index')" :active="request()->routeIs('students.*')">
+                {{ __('Students') }}
             </x-responsive-nav-link>
         </div>
 
