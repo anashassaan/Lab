@@ -1,0 +1,76 @@
+{
+  "articles": [
+    {
+      "source": { "name": "TechCrunch" },
+      "author": "Anita Ramesh",
+      "title": "Open-source satellites promise hourly wildfire alerts",
+      "description": "A climate startup just flew its third open-source imaging satellite, opening the door to faster wildfire detection feeds for local newsrooms.",
+      "url": "https://example.com/open-satellite-alerts",
+      "urlToImage": "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa",
+      "publishedAt": "2025-12-10T14:05:00Z"
+    },
+    {
+      "source": { "name": "Reuters" },
+      "author": "Reuters staff",
+      "title": "Semiconductor alliance expands foundry capacity",
+      "description": "Three major chipmakers agreed to pool $4B into a shared foundry that will focus on automotive grade silicon.",
+      "url": "https://example.com/foundry-alliance",
+      "urlToImage": "https://images.unsplash.com/photo-1518770660439-4636190af475",
+      "publishedAt": "2025-12-10T10:12:00Z"
+    },
+    {
+      "source": { "name": "Associated Press" },
+      "author": "AP",
+      "title": "Arctic research vessel documents record low sea ice",
+      "description": "Field scientists reported unusually thin ice shelves and shared sonar maps that will be released under a Creative Commons license.",
+      "url": "https://example.com/arctic-research",
+      "urlToImage": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
+      "publishedAt": "2025-12-09T22:45:00Z"
+    },
+    {
+      "source": { "name": "Bloomberg" },
+      "author": "Lydia Chen",
+      "title": "Battery recyclers race to capture sodium-ion boom",
+      "description": "New regional plants are scaling to handle sodium-ion packs for grid storage, closing the loop on rare material reuse.",
+      "url": "https://example.com/sodium-recycling",
+      "urlToImage": "https://images.unsplash.com/photo-1469474968028-56623f02e42e",
+      "publishedAt": "2025-12-09T16:30:00Z"
+    },
+    {
+      "source": { "name": "The Verge" },
+      "author": "Jon Porter",
+      "title": "Spatial audio finds a home on commuter trains",
+      "description": "Transit agencies are piloting subtle ambient alerts that blend with station announcements instead of blasting over speakers.",
+      "url": "https://example.com/spatial-rail",
+      "urlToImage": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee",
+      "publishedAt": "2025-12-09T08:11:00Z"
+    },
+    {
+      "source": { "name": "Engadget" },
+      "author": "Igor Bonifacic",
+      "title": "Indie devs embrace low-power game jams",
+      "description": "A 72 hour jam challenged teams to produce games that never push hardware past 25 percent CPU utilization.",
+      "url": "https://example.com/low-power-jam",
+      "urlToImage": "https://images.unsplash.com/photo-1484417894907-623942c8ee29",
+      "publishedAt": "2025-12-08T20:07:00Z"
+    },
+    {
+      "source": { "name": "ESPN" },
+      "author": "ESPN News Services",
+      "title": "Analytics board approves shot clock tweaks",
+      "description": "Professional basketball is experimenting with a 4 second reset after offensive rebounds during the winter showcase.",
+      "url": "https://example.com/shot-clock-tweak",
+      "urlToImage": "https://images.unsplash.com/photo-1502877338535-766e1452684a",
+      "publishedAt": "2025-12-08T12:25:00Z"
+    },
+    {
+      "source": { "name": "Healthline" },
+      "author": "Dr. Priya Patel",
+      "title": "Community clinics test AI scribes across five states",
+      "description": "Nurses say the lightweight tool cuts charting time in half, giving them space to hold longer follow-up conversations.",
+      "url": "https://example.com/ai-scribes",
+      "urlToImage": "https://images.unsplash.com/photo-1579154204601-01588f351e67",
+      "publishedAt": "2025-12-08T09:03:00Z"
+    }
+  ]
+}
